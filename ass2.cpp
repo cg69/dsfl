@@ -1,11 +1,4 @@
- /*
-Assignment No:: 2
-Title :: Implement priority queue as ADT using single linked list for servicing patients in an hospital
-		with priorities as i) Serious (top priority) ii) medium illness (medium priority) iii) General (Least priority).
-Name :: Sachin B. Aher
-Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
-*/
-/*---CODE---*/
+ 
   #include<iostream>
   #include<string.h>
   #include<stdlib.h>
@@ -23,7 +16,6 @@ Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
 
   class queue
   {
-     public:
        node *f,*r;
      public:
        queue()
@@ -33,18 +25,11 @@ Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
        void enque(node);
        void disp();
        void dequeue();
-       int isempty()
-       {
-          if(f==NULL)
-            return 1;
-          else
-            return 0;
-       }
   };
 
   void queue::enque(node x)
   {
-      if(isempty()==1)
+      if(f==NULL)
         r=f=new node(x);
       else
       {
@@ -57,7 +42,7 @@ Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
   void queue::dequeue()
   {
      node *temp;
-     if(isempty()==1)
+     if(f==NULL)
        cout<<"\nNo patients\n";
      else
      {
@@ -157,7 +142,8 @@ Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
 				break;
 			case 11:temp.severity=2;
 				break;
-			default:temp.severity=3;
+			default:cout<<"ENter Severity\n";
+				cin>>temp.severity;
         }
        switch(temp.severity)
        {
@@ -236,8 +222,3 @@ Roll No. :: 3174521		Class:: SE-B-IT		Batch:B3
       }
      }while(ch!=4);
   }
-
-/*---OUTPUT---*/
-/*
-
-*/
